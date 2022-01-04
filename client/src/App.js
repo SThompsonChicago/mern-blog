@@ -20,7 +20,7 @@ import Home from './components/Home';
 import Portfolio from './components/pages/Portfolio';
 import Resume from './components/pages/Resume';
 import Publications from './components/pages/Publications'
-import Contact from './components/pages/Contact';
+import Login from './components/pages/Login';
 import Blog from './components/pages/Blog';
 
 
@@ -56,7 +56,7 @@ function App() {
                 <Route exact path='/portfolio' element={<Portfolio />} />
                 <Route exact path='/resume' element={<Resume />} />
                 <Route exact path='/publications' element={<Publications />} />
-                <Route exact path='/contact' element={<Contact />} />
+                <Route exact path='/login' element={<Login />} />
                 <Route exact path='/blog' element={<Blog />} />
               </Routes>
             <Footer />

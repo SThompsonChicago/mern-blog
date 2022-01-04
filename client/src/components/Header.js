@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
 
 const styles = {
   hov: {
@@ -17,6 +18,10 @@ const styles = {
 }
 
 function Header() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
     return (
         <div>
         <section className="hero notification is-link is-size-6-mobile">
@@ -32,14 +37,28 @@ function Header() {
     style={styles.space}
     to="/portfolio"
     >
-      <span>Portfolio</span>
+      <span>New Post</span>
     </Link>
-    <Link className="button is-black is-size-6-mobile"
+    <div>
+          {Auth.loggedIn() ? (
+            <>
+              <button className="button is-black is-size-6-mobile"
+    style={styles.space} onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="button is-black is-size-6-mobile"
     style={styles.space}
-    to="/contact"
+    to="/login"
     >
-      <span>Contact</span>
+      <span>Login</span>
     </Link>
+            </>
+          )}
+        </div>
+    
 
 </header>
   </div>

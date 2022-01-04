@@ -6,7 +6,7 @@ import Home from './Home';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
 import Publications from './pages/Publications'
-import Contact from './pages/Contact';
+import Login from './pages/Login';
 
 export default function Container () {
     const [currentPage, setCurrentPage] = useState('Home');
@@ -27,7 +27,7 @@ export default function Container () {
         if (currentPage === 'Publications') {
             return <Publications />
         }
-        return <Contact />
+        return <Login />
     };
 
     const handlePageChange = (page) => setCurrentPage(page);
