@@ -5,19 +5,18 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { palette } from '@mui/system';
 import { sizing } from '@mui/system';
 import Box from '@mui/material/Box';
 
-import { setContext } from '@apollo/client/link/context';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/pages/About';
 import Home from './components/Home';
-import Portfolio from './components/pages/Portfolio';
+import PostForm from './components/pages/PostForm';
 import Resume from './components/pages/Resume';
 import Publications from './components/pages/Publications'
 import Login from './components/pages/Login';
@@ -53,7 +52,7 @@ function App() {
 <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/about' element={<About />} />
-                <Route exact path='/portfolio' element={<Portfolio />} />
+                <Route exact path='/postForm' element={<PostForm />} />
                 <Route exact path='/resume' element={<Resume />} />
                 <Route exact path='/publications' element={<Publications />} />
                 <Route exact path='/login' element={<Login />} />

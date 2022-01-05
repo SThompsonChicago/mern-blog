@@ -5,6 +5,21 @@ import { LOGIN_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
+const styles = {
+  hov: {
+    cursor: 'pointer',
+  },
+  right: {
+    float: "right",
+  },
+  space: {
+    margin:"5px",
+  },
+  white: {
+    color: "white",
+  }
+}
+
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -42,34 +57,42 @@ const Login = (props) => {
 
   return (
 
-        <div className="card is-black">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-
+    <div className="card notification is-black">
+    <div className="card">
+        <div className="card-content notification is-black">
+        <p className="title is-4 is-size-6-mobile">
+                        Login
+                    </p>
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                You are now logged in. 
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}
+              style={styles.space}
+              >
                 <input
                   className="form-input"
-                  placeholder="Your email"
                   name="email"
                   type="email"
+                  placeholder="Email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <br>
+                </br>
                 <input
                   className="form-input"
-                  placeholder="******"
                   name="password"
                   type="password"
+                  placeholder="Password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                                <br>
+                </br>
                 <button
-                  className="btn btn-block btn-primary"
+                  className="button is-link is-size-6-mobile"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -83,6 +106,8 @@ const Login = (props) => {
                 {error.message}
               </div>
             )}
+          </div>
+          </div>
           </div>
   );
 };

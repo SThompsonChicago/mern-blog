@@ -35,7 +35,7 @@ function Header() {
     </Link>
     <Link className="button is-black is-size-6-mobile"
     style={styles.space}
-    to="/portfolio"
+    to="/postForm"
     >
       <span>New Post</span>
     </Link>

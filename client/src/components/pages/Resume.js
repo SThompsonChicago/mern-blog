@@ -9,7 +9,7 @@ export default function Resume() {
                             Resume
                         </p>
                 <p classname="subtitle is-size-6-mobile">
-                    A pdf version of my resume can be found <a href="https://sthompsonchicago.github.io/My_portfolio/assets/ThompsonResume.pdf" className="btn btn-primary">
+                    A pdf version of my resume can be found <a href="https://sthompsonchicago.github.io/My_postForm/assets/ThompsonResume.pdf" className="btn btn-primary">
                     here</a>.
                     </p>
 

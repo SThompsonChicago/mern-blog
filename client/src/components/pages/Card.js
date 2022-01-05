@@ -13,7 +13,7 @@ export default function Card() {
                     </card>
             <img
                 className="card-img-top"
-                src={`https://sthompsonchicago.github.io/My_portfolio/assets/bookTalkPic.png`}
+                src={`https://sthompsonchicago.github.io/My_postForm/assets/bookTalkPic.png`}
                 alt="App image"
             />
             <div className="card-body">

@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import About from './pages/About';
 import Home from './Home';
-import Portfolio from './pages/Portfolio';
+import PostForm from './pages/PostForm';
 import Resume from './pages/Resume';
 import Publications from './pages/Publications'
 import Login from './pages/Login';
@@ -18,8 +18,8 @@ export default function Container () {
         if (currentPage === 'About') {
             return <About />
         }
-        if (currentPage === 'Portfolio') {
-            return <Portfolio />
+        if (currentPage === 'PostForm') {
+            return <PostForm />
         }
         if (currentPage === 'Resume') {
             return <Resume />

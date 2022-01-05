@@ -1,9 +1,9 @@
-# React Portfolio
+# React PostForm
 
 
   ## Description
 
-  This is my professional portfolio, which includes links to apps I've created, my resume and contact information. It was created using the MERN stack. 
+  This is my professional postForm, which includes links to apps I've created, my resume and contact information. It was created using the MERN stack. 
 
   ## Table of Contents
 
@@ -31,9 +31,9 @@
 
   ![Main page.](./public/frontpage.png)
 
-  Here is a picture of the portfolio page: 
+  Here is a picture of the postForm page: 
   
-  ![Portfolio page.](./public/portfoliopage.png)
+  ![PostForm page.](./public/postFormpage.png)
 
 
   ## Contributing
