@@ -9,7 +9,11 @@ import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 
 const PostForm = () => {
-  const [postText, setPostText] = useState('');
+  const [formState, setPostText] = useState({
+    postTitle: '',
+    postText: '',
+    postAuthor: ''
+  });
 
 
 
@@ -25,12 +29,6 @@ const PostForm = () => {
       } catch (e) {
         console.error(e);
       }
-
-      // const { me } = cache.readQuery({ query: QUERY_ME });
-      // cache.writeQuery({
-      //   query: QUERY_ME,
-      //   data: { me: { ...me, posts: [...me.posts, addPost] } },
-      // });
     },
   });
 
@@ -40,24 +38,31 @@ const PostForm = () => {
     try {
       const { data } = await addPost({
         variables: {
-          postText,
+          ...formState,
           postAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setPostText('');
     } catch (err) {
       console.error(err);
     }
+
+    setPostText({
+      postTitle: '',
+      postText: '',
+      postAuthor: ''
+    });
   };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+      setPostText({
+          ...formState,
+          [name]: value,
+      });
+  
+};
 
-    if (name === 'postText') {
-      setPostText(value);
-    }
-  };
 
   return (
     <div className="card notification is-black">
@@ -74,12 +79,22 @@ const PostForm = () => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
+            <textarea
+                name="postTitle"
+                placeholder="Title"
+                value={formState.postTitle}
+                className="textarea"
+                rows="2"
+                onChange={handleChange}
+              ></textarea>
+              <br>
+              </br>
               <textarea
                 name="postText"
                 placeholder="Type here"
-                value={postText}
+                value={formState.postText}
                 className="textarea" 
-                rows="10"
+                rows="20"
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -100,7 +115,7 @@ const PostForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your posts. Please{' '}
+          To create a new post, you must{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
