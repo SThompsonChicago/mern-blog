@@ -33,15 +33,15 @@ function Header() {
     >
       <span>Home</span>
     </Link>
-    <Link className="button is-black is-size-6-mobile"
+    <div>
+          {Auth.loggedIn() ? (
+            <>
+            <Link className="button is-black is-size-6-mobile"
     style={styles.space}
     to="/postForm"
     >
       <span>New Post</span>
     </Link>
-    <div>
-          {Auth.loggedIn() ? (
-            <>
               <button className="button is-black is-size-6-mobile"
     style={styles.space} onClick={logout}>
                 Logout
@@ -54,6 +54,12 @@ function Header() {
     to="/login"
     >
       <span>Login</span>
+    </Link>
+    <Link className="button is-black is-size-6-mobile"
+    style={styles.space}
+    to="/signup"
+    >
+      <span>Sign Up</span>
     </Link>
             </>
           )}

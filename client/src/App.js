@@ -21,6 +21,7 @@ import Resume from './components/pages/Resume';
 import Publications from './components/pages/Publications'
 import Login from './components/pages/Login';
 import Blog from './components/pages/Blog';
+import Signup from './components/pages/Signup';
 
 
 const httpLink = createHttpLink({
@@ -47,7 +48,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
     
-      <div className="notification is-black">
+      <div className="notification is-success">
             <Header />
 <Routes>
                 <Route exact path='/' element={<Home />} />
@@ -57,6 +58,7 @@ function App() {
                 <Route exact path='/publications' element={<Publications />} />
                 <Route exact path='/login' element={<Login />} />
                 <Route exact path='/blog' element={<Blog />} />
+                <Route exact path='/signup' element={<Signup />} />
               </Routes>
             <Footer />
         </div>
